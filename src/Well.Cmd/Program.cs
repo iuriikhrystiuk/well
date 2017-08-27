@@ -5,7 +5,8 @@ namespace Well.Cmd
 {
     class Program
     {
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
             var engine = new Engine();
             Console.WriteLine("Hello World!");
         }
