@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Well.Algebra.Vectors.Exceptions;
+using Well.Algebra.Exceptions;
 using Well.Algebra.Vectors.Slots;
 
 namespace Well.Algebra.Vectors
@@ -10,15 +10,13 @@ namespace Well.Algebra.Vectors
     {
         private readonly Slot<T>[] _items;
         private readonly SlotFactory _factory = new SlotFactory();
-        private readonly Direction _direction;
 
-        private T this[long index] => _items[index].Item;
+        public T this[long index] => _items[index].Item;
 
-        private long Count => _items.Length;
+        public long Count => _items.Length;
 
-        public Vector(Direction direction, params T[] items)
+        public Vector(params T[] items)
         {
-            _direction = direction;
             _items = items?.Select(t => _factory.CreateSlot(t)).ToArray() ??
                      throw new ArgumentNullException(nameof(items));
         }
@@ -28,11 +26,6 @@ namespace Well.Algebra.Vectors
             if (other.Count != Count)
             {
                 throw new IncompatibleDimensionsException();
-            }
-
-            if (_direction == other._direction)
-            {
-                throw new IncompatibleDirectionsException();
             }
 
             var sum = default(T);
@@ -50,12 +43,6 @@ namespace Well.Algebra.Vectors
             {
                 throw new IncompatibleDimensionsException();
             }
-            
-            if (_direction != other._direction)
-            {
-                throw new IncompatibleDirectionsException();
-            }
-
 
             var items = new T[Count];
             for (var i = 0; i < Count; i++)
@@ -63,7 +50,7 @@ namespace Well.Algebra.Vectors
                 items[i] = _items[i].Add(other[i]);
             }
 
-            return new Vector<T>(_direction, items);
+            return new Vector<T>(items);
         }
 
         public override string ToString()

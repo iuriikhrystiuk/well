@@ -1,6 +1,6 @@
 using System;
 
-namespace Well.Algebra.Vectors.Exceptions
+namespace Well.Algebra.Exceptions
 {
     public class IncompatibleDirectionsException : Exception
     {
