@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Well.Calculator.Reader;
 
 namespace Well.Calculator.Input
 {
@@ -11,9 +12,9 @@ namespace Well.Calculator.Input
             _fileLocation = fileLocation;
         }
 
-        public string Read()
+        public IReader Read()
         {
-            return File.ReadAllText(_fileLocation);
+            return new StringSequenceReader(File.ReadAllText(_fileLocation));
         }
     }
 }

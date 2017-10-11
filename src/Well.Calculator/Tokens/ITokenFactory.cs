@@ -1,4 +1,4 @@
-﻿namespace Well.Calculator.Lexer
+﻿namespace Well.Calculator.Tokens
 {
     public interface ITokenFactory
     {

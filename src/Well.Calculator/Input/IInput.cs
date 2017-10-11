@@ -1,7 +1,9 @@
-﻿namespace Well.Calculator.Input
+﻿using Well.Calculator.Reader;
+
+namespace Well.Calculator.Input
 {
     public interface IInput
     {
-        string Read();
+        IReader Read();
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Well.Calculator.Reader;
+using Well.Calculator.Tokens;
 
-namespace Well.Calculator.Lexer
+namespace Well.Calculator.LexicalAnalysis
 {
-    public interface ILexer
+    internal interface ILexer
     {
         IEnumerable<IToken> Analyze(IReader reader);
     }

@@ -6,4 +6,7 @@
     <Folder Include="Evaluator" />
     <Folder Include="Interpreter" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SimpleInjector" Version="4.0.11" />
+  </ItemGroup>
 </Project>

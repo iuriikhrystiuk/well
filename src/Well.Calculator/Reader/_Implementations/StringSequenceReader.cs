@@ -1,14 +1,14 @@
 ﻿namespace Well.Calculator.Reader
 {
-    public class StringReader : IReader
+    internal class StringSequenceReader : IReader
     {
         private readonly string _input;
         private int _currentPosition;
         
-        public StringReader(string input)
+        public StringSequenceReader(string input)
         {
             _input = input;
-            _currentPosition = 0;
+            _currentPosition = -1;
         }
         
         public bool Next()
