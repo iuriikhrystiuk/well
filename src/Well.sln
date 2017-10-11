@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A63DA814
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Well.Algebra.Tests", "Tests\Well.Algebra.Tests\Well.Algebra.Tests.csproj", "{2E4370CB-21A1-4370-9BA9-3E42D5F8D905}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Well.Calculator", "Well.Calculator\Well.Calculator.csproj", "{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,18 @@ Global
 		{2E4370CB-21A1-4370-9BA9-3E42D5F8D905}.Release|x64.Build.0 = Release|x64
 		{2E4370CB-21A1-4370-9BA9-3E42D5F8D905}.Release|x86.ActiveCfg = Release|x86
 		{2E4370CB-21A1-4370-9BA9-3E42D5F8D905}.Release|x86.Build.0 = Release|x86
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|x64.ActiveCfg = Debug|x64
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|x64.Build.0 = Debug|x64
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|x86.ActiveCfg = Debug|x86
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Debug|x86.Build.0 = Debug|x86
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|x64.ActiveCfg = Release|x64
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|x64.Build.0 = Release|x64
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|x86.ActiveCfg = Release|x86
+		{8F17F84C-A7EF-4A73-9A0C-54B06824A97A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
