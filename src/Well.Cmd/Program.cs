@@ -9,7 +9,7 @@ namespace Well.Cmd
     {
         static void Main(string[] args)
         {
-            var vector = new Vector<int>(1, 2, 3);
+            var vector = new Vector<int>(Direction.Vertical, 1, 2, 3);
             Console.WriteLine(vector);
 
             var matrix = new Matrix<int>(
@@ -18,6 +18,7 @@ namespace Well.Cmd
                 new[] {1, 2, 3});
             Console.WriteLine(vector.Dot(matrix));
             Console.WriteLine(matrix.Dot(vector));
+            Console.WriteLine(matrix.Dot(matrix));
         }
     }
 }

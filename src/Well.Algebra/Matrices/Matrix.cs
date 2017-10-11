@@ -23,7 +23,7 @@ namespace Well.Algebra.Matrices
                 throw new IncompatibleDimensionsException();
             }
 
-            _items = items.Select(i=>new Vector<T>(i)).ToArray();
+            _items = items.Select(i=>new Vector<T>(Direction.Horizontal, i)).ToArray();
         }
 
         public long Rows => _items.Length;
@@ -35,12 +35,12 @@ namespace Well.Algebra.Matrices
         public Vector<T> Column(long index)
         {
             var collection = new List<T>();
-            for (int i = 0; i < Rows; i++)
+            for (var i = 0; i < Rows; i++)
             {
                 collection.Add(_items[i][index]);
             }
             
-            return new Vector<T>(collection.ToArray());
+            return new Vector<T>(Direction.Vertical, collection.ToArray());
         }
         
         public override string ToString()

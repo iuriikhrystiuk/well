@@ -11,21 +11,34 @@ namespace Well.Algebra.Vectors
         private readonly Slot<T>[] _items;
         private readonly SlotFactory _factory = new SlotFactory();
 
-        public T this[long index] => _items[index].Item;
-
-        public long Count => _items.Length;
-
-        public Vector(params T[] items)
+        public Vector(Direction direction, params T[] items)
         {
+            Direction = direction;
             _items = items?.Select(t => _factory.CreateSlot(t)).ToArray() ??
                      throw new ArgumentNullException(nameof(items));
         }
 
+        public T this[long index] => _items[index].Item;
+
+        public long Count => _items.Length;
+
+        public Direction Direction { get; }
+        
         public T Dot(Vector<T> other)
         {
             if (other.Count != Count)
             {
                 throw new IncompatibleDimensionsException();
+            }
+
+            if (Direction == other.Direction)
+            {
+                throw new IncompatibleDirectionsException();
+            }
+
+            if (Direction == Direction.Vertical)
+            {
+                throw new InvalidOperationException();
             }
 
             var sum = default(T);
@@ -35,22 +48,6 @@ namespace Well.Algebra.Vectors
             }
 
             return sum;
-        }
-
-        public Vector<T> Plus(Vector<T> other)
-        {
-            if (other.Count != Count)
-            {
-                throw new IncompatibleDimensionsException();
-            }
-
-            var items = new T[Count];
-            for (var i = 0; i < Count; i++)
-            {
-                items[i] = _items[i].Add(other[i]);
-            }
-
-            return new Vector<T>(items);
         }
 
         public override string ToString()

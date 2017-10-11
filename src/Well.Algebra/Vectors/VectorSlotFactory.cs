@@ -14,6 +14,7 @@ namespace Well.Algebra.Vectors
                 case TypeCode.Int64:
                     return new LongVectorSlot(Convert.ToInt64(item)) as Slot<T>;
                 case TypeCode.Decimal:
+                    return new DecimalVectorSlot(Convert.ToDecimal(item)) as Slot<T>;
                 default:
                     throw new NotImplementedException();
             }
