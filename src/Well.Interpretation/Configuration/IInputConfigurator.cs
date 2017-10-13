@@ -1,4 +1,5 @@
 ﻿using Well.Interpretation.Input;
+using Well.Interpretation.Statements;
 using Well.Interpretation.Tokens;
 
 namespace Well.Interpretation.Configuration
@@ -18,5 +19,10 @@ namespace Well.Interpretation.Configuration
     public interface ITokensConfigured : IResolver
     {
         ITokenFactoriesProvider FactoriesProvider { get; }
+    }
+    
+    public interface IStatementsConfigured : IResolver
+    {
+        IStatementFactoriesProvider FactoriesProvider { get; }
     }
 }

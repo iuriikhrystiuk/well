@@ -1,6 +1,6 @@
 ﻿using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.Separator
+namespace Well.Calculator.Tokens.Separator
 {
     public class SeparatorToken : BaseToken
     {

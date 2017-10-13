@@ -3,9 +3,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Evaluator" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="SimpleInjector" Version="4.0.11" />
+    <ProjectReference Include="..\Well.Interpretation\Well.Interpretation.csproj" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.Constant
+namespace Well.Calculator.Tokens.Constant
 {
     public class ConstantToken : BaseToken
     {

@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using Well.Interpretation.Tokens;
 using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.Constant
+namespace Well.Calculator.Tokens.Constant
 {
     public class ConstantTokenFactory : BaseTokenFactory
     {

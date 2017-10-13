@@ -1,15 +1,13 @@
 using System.Collections.Generic;
+using Well.Calculator.Interpreter;
+using Well.Calculator.Tokens;
 using Well.Interpretation.Configuration.Extensions;
 using Well.Interpretation.Configuration._Implementations;
 using Well.Interpretation.Exceptions;
 using Well.Interpretation.Input._Implementations;
+using Well.Interpretation.Interpreter;
+using Well.Interpretation.Statements;
 using Well.Interpretation.Tokens;
-using Well.Interpretation.Tokens.Constant;
-using Well.Interpretation.Tokens.Declaration;
-using Well.Interpretation.Tokens.EndLine;
-using Well.Interpretation.Tokens.Operator;
-using Well.Interpretation.Tokens.Separator;
-using Well.Interpretation.Tokens.Variable;
 using Xunit;
 
 namespace Well.Calculator.Tests
@@ -23,17 +21,12 @@ namespace Well.Calculator.Tests
                 yield break;
             }
         }
-
-        private class RealTokensProvider : ITokenFactoriesProvider
+        
+        private class DummyStatementProvider : IStatementFactoriesProvider
         {
-            public IEnumerable<ITokenFactory> GetTokenFactories()
+            public IEnumerable<IStatementFactory> GetStatementFactories()
             {
-                yield return new DeclarationTokenFactory();
-                yield return new OperatorTokenFactory();
-                yield return new VariableTokenFactory();
-                yield return new ConstantTokenFactory();
-                yield return new SeparatorTokenFactory();
-                yield return new EndLineTokenFactory();
+                yield break;
             }
         }
         
@@ -43,6 +36,7 @@ namespace Well.Calculator.Tests
             Assert.Throws<LexerException>(() => new Configurator()
                 .ConfigureInput(new FileInput("TestCases/model.wc"))
                 .ConfigureTokens(new DummyTokensProvider())
+                .ConfigureStatements(new DummyStatementProvider())
                 .Build()
                 .Process());
         }
@@ -50,13 +44,14 @@ namespace Well.Calculator.Tests
         [Fact]
         public void Process_Succeeds_With_All_Tokens_In_Place()
         {
-            var tokens = new Configurator()
+            var statements = new Configurator()
                 .ConfigureInput(new FileInput("TestCases/model.wc"))
-                .ConfigureTokens(new RealTokensProvider())
+                .ConfigureTokens(new CalculatorTokensFactoryProvider())
+                .ConfigureStatements(new CalculatorStatementFactoriesProvider())
                 .Build()
                 .Process();
             
-            Assert.Equal(8, tokens.Count);
+            Assert.Equal(1, statements.Count);
         }
     }
 }

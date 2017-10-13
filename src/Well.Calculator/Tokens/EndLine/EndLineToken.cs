@@ -1,6 +1,6 @@
 ﻿using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.EndLine
+namespace Well.Calculator.Tokens.EndLine
 {
     public class EndLineToken : BaseToken
     {

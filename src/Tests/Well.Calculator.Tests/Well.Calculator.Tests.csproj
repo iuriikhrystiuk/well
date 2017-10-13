@@ -14,6 +14,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Well.Calculator\Well.Calculator.csproj" />
     <ProjectReference Include="..\..\Well.Interpretation\Well.Interpretation.csproj" />
   </ItemGroup>
 </Project>

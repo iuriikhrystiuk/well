@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using Well.Interpretation.Tokens;
 using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.Operator
+namespace Well.Calculator.Tokens.Operator
 {
     public class OperatorTokenFactory : BaseTokenFactory
     {

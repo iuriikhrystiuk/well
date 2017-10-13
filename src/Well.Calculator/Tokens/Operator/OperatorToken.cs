@@ -1,6 +1,6 @@
 ﻿using Well.Interpretation.Tokens.Base;
 
-namespace Well.Interpretation.Tokens.Operator
+namespace Well.Calculator.Tokens.Operator
 {
     public class OperatorToken : BaseToken
     {
