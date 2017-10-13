@@ -9,11 +9,11 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Well.Calculator\Well.Calculator.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="TestCases\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Well.Interpretation\Well.Interpretation.csproj" />
   </ItemGroup>
 </Project>

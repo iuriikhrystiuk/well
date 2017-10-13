@@ -1,15 +1,15 @@
 using System.Collections.Generic;
-using Well.Calculator.Configuration;
-using Well.Calculator.Configuration.Extensions;
-using Well.Calculator.Exceptions;
-using Well.Calculator.Input;
-using Well.Calculator.Tokens;
-using Well.Calculator.Tokens.Constant;
-using Well.Calculator.Tokens.Declaration;
-using Well.Calculator.Tokens.EndLine;
-using Well.Calculator.Tokens.Operator;
-using Well.Calculator.Tokens.Separator;
-using Well.Calculator.Tokens.Variable;
+using Well.Interpretation.Configuration.Extensions;
+using Well.Interpretation.Configuration._Implementations;
+using Well.Interpretation.Exceptions;
+using Well.Interpretation.Input._Implementations;
+using Well.Interpretation.Tokens;
+using Well.Interpretation.Tokens.Constant;
+using Well.Interpretation.Tokens.Declaration;
+using Well.Interpretation.Tokens.EndLine;
+using Well.Interpretation.Tokens.Operator;
+using Well.Interpretation.Tokens.Separator;
+using Well.Interpretation.Tokens.Variable;
 using Xunit;
 
 namespace Well.Calculator.Tests
