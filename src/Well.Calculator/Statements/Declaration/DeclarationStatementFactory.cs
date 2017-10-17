@@ -4,7 +4,7 @@ using Well.Interpretation.Interpreter;
 using Well.Interpretation.Statements;
 using Well.Interpretation.Tokens;
 
-namespace Well.Calculator.Interpreter.Declaration
+namespace Well.Calculator.Statements.Declaration
 {
     public class DeclarationStatementFactory : IStatementFactory
     {
@@ -13,9 +13,9 @@ namespace Well.Calculator.Interpreter.Declaration
             return token.GetType().IsAssignableFrom(typeof(DeclarationToken));
         }
 
-        public IStatement CreateStatement(IEnumerable<IToken> tokens)
+        public IStatement CreateStatement()
         {
-            return new DeclarationStatement(tokens);
+            return new DeclarationStatement();
         }
     }
 }

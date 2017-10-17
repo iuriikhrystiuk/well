@@ -1,5 +1,6 @@
 ﻿using SimpleInjector;
 using Well.Interpretation.Interpreter;
+using Well.Interpretation.Interpreter.Base;
 using Well.Interpretation.LexicalAnalysis;
 using Well.Interpretation.LexicalAnalysis._Implementations;
 using Well.Interpretation.Statements;
@@ -16,7 +17,7 @@ namespace Well.Interpretation.Configuration._Implementations
             _container = new Container();
             _container.Register<IProcessor, Processor>();
             _container.Register<ILexer, Lexer>();
-            _container.Register<IStatementBuilder, DefaultStatementBuilder>();
+            _container.Register<ITokensInterpretation, TokensInterpreter>();
         }
 
         public TInterface Resolve<TInterface>() where TInterface : class

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Well.Calculator.Interpreter;
+using Well.Calculator.Statements;
 using Well.Calculator.Tokens;
 using Well.Interpretation.Configuration.Extensions;
 using Well.Interpretation.Configuration._Implementations;

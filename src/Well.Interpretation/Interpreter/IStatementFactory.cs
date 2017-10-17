@@ -8,6 +8,6 @@ namespace Well.Interpretation.Interpreter
     {
         bool CanCreateStatement(IToken token);
 
-        IStatement CreateStatement(IEnumerable<IToken> tokens);
+        IStatement CreateStatement();
     }
 }

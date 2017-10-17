@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
+using Well.Calculator.Tokens.Declaration;
 using Well.Interpretation.Interpreter;
 using Well.Interpretation.Statements;
 using Well.Interpretation.Tokens;
 
-namespace Well.Calculator.Interpreter.Declaration
+namespace Well.Calculator.Statements.Declaration
 {
     public class DeclarationStatement : IStatement
     {
-        private readonly IEnumerable<IToken> _tokens;
-
-        public DeclarationStatement(IEnumerable<IToken> tokens)
+        
+        public bool TryInjestToken(IToken token)
         {
-            _tokens = tokens;
+            switch (token.GetType())
+            {
+                case typeof(DeclarationToken):
+                    
+            }
         }
 
         public void Execute(IContext context)
