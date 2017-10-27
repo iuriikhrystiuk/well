@@ -18,29 +18,29 @@ namespace Well.Interpretation.Interpreter.Base
         public IEnumerable<IStatement> Interpret(IEnumerable<IToken> tokens, out IContext context)
         {
             context = null;
-            List<IStatement> statements = new List<IStatement>();
+            var statements = new List<IStatement>();
 
             IStatement curreStatement = null;
             var tokensArray = tokens.ToArray();
-            for (int i = 0; i < tokensArray.Length; i++)
+            for (var i = 0; i < tokensArray.Length; i++)
             {
-                if (curreStatement == null)
+                var currentToken = tokensArray[i];
+                if (curreStatement == null || curreStatement.Finished)
                 {
                     var factory = _factoriesProvider.GetStatementFactories()
-                        .FirstOrDefault(f => f.CanCreateStatement(tokensArray[i]));
+                        .FirstOrDefault(f => f.CanCreateStatement(currentToken));
                     if (factory == null)
                     {
-                        throw new InterpretationException($"Cannot create statement from token {tokensArray[i]}");
+                        throw new InterpretationException($"Cannot create statement from token {currentToken}");
                     }
 
-                    curreStatement = factory.CreateStatement();
+                    curreStatement = factory.CreateStatement(currentToken);
+                    statements.Add(curreStatement);
                 }
                 else
                 {
-                    if (!curreStatement.TryInjestToken(tokensArray[i]))
+                    if (!curreStatement.TryInjestToken(currentToken))
                     {
-                        statements.Add(curreStatement);
-                        curreStatement = null;
                         i--;
                     }
                 }

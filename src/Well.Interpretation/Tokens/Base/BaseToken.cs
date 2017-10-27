@@ -2,12 +2,12 @@
 {
     public abstract class BaseToken : IToken
     {
-        private readonly string _tokenString;
-
         protected BaseToken(string tokenString)
         {
-            _tokenString = tokenString;
+            Value = tokenString;
         }
+
+        public string Value { get; }
 
         public bool SemanticallyEquals(IToken token)
         {

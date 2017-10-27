@@ -8,14 +8,21 @@ namespace Well.Calculator.Statements.Declaration
 {
     public class DeclarationStatementFactory : IStatementFactory
     {
+        private readonly IStatementFactoriesProvider _statementFactoriesProvider;
+
+        public DeclarationStatementFactory(IStatementFactoriesProvider statementFactoriesProvider)
+        {
+            _statementFactoriesProvider = statementFactoriesProvider;
+        }
+
         public bool CanCreateStatement(IToken token)
         {
             return token.GetType().IsAssignableFrom(typeof(DeclarationToken));
         }
 
-        public IStatement CreateStatement()
+        public IStatement CreateStatement(IToken token)
         {
-            return new DeclarationStatement();
+            return new DeclarationStatement(token, _statementFactoriesProvider);
         }
     }
 }

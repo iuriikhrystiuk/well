@@ -1,12 +1,13 @@
 ﻿using System.Text.RegularExpressions;
+using Well.Calculator.Tokens.Operator;
 using Well.Interpretation.Tokens;
 using Well.Interpretation.Tokens.Base;
 
-namespace Well.Calculator.Tokens.Operator
+namespace Well.Calculator.Tokens.Iterator
 {
-    public class OperatorTokenFactory : BaseTokenFactory
+    public class IteratorTokenFactory: BaseTokenFactory
     {
-        protected override Regex Tester => new Regex(@"^(\*|\\|\+|\-)$");
+        protected override Regex Tester => new Regex(@"^,$");
 
         protected override IToken Create(string input)
         {

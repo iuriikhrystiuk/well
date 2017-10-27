@@ -3,8 +3,6 @@ using Well.Interpretation.Interpreter;
 using Well.Interpretation.Interpreter.Base;
 using Well.Interpretation.LexicalAnalysis;
 using Well.Interpretation.LexicalAnalysis._Implementations;
-using Well.Interpretation.Statements;
-using Well.Interpretation.Statements.Base;
 
 namespace Well.Interpretation.Configuration._Implementations
 {

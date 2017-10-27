@@ -8,6 +8,7 @@ namespace Well.Interpretation.Configuration._Implementations
             : base(resolver)
         {
             FactoriesProvider = provider;
+            Register(provider);
         }
 
         public IStatementFactoriesProvider FactoriesProvider { get; }
